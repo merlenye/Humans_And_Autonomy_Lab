@@ -1,16 +1,9 @@
 import os 
 import csv
-
-
-print(os.getcwd())
-
 filenames = os.listdir(os.getcwd())
-print(filenames)
-
 for filename in filenames:
 
     if filename.endswith('.csv'):
-        print("got it")
         r=csv.reader(open(filename))
         new_data = []
         small = float(1000000000000000)
@@ -30,5 +23,3 @@ for filename in filenames:
         with open(newfilename, "w") as f:
             writer = csv.writer(f)
             writer.writerows(new_data)
-        
-
