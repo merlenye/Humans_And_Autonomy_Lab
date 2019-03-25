@@ -1,3 +1,4 @@
+# Quickly clean data from character format (i.e. 7:20) into seconds for easier analysis in statistical software
 import pandas
 df = pandas.read_csv('Data_Frequency_Cleaned.csv')
 for i in range(0,42):
@@ -14,6 +15,3 @@ for i in range(0,42):
             df.set_value(i, m, newval)
             
 df.to_csv('time_in_seconds.csv')
-        
-        
-        
