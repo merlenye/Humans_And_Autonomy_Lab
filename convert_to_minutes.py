@@ -1,3 +1,5 @@
+#Converts time column in drone log files from ambigious system time in milliseconds into minutes/seconds since drone takeoff
+
 import openpyxl
 import math
 import os
