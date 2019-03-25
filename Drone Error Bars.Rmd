@@ -1,0 +1,25 @@
+---
+title: "Drone Freq"
+author: "Merle Nye"
+date: "3/25/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load_data}
+library(reshape2)
+library(tidyverse)
+library(readr)
+Drone_Freqs <- read_csv("Drone_Freqs.csv")
+View(Drone_Freqs)
+```
+
+```{r plotbars}
+ggplot(Drone_Freqs, aes(x = Name, y = Time)) +
+  stat_summary(fun.y = mean, geom = "bar") +
+  stat_summary(fun.data = mean_se, fun.args = list(mult = 1), geom = "errorbar", width = 0.2)+
+  labs(y = "Time in Seconds", x = "Group")
+```
