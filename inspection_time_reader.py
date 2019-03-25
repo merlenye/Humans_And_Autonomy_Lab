@@ -1,3 +1,5 @@
+# Program to analyze the drone log files to determine how long the pilot spent in inspection mode and supervisory mode
+# for each experiment
 import openpyxl
 import math
 import os
