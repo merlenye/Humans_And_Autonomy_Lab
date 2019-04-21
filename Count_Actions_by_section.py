@@ -1,4 +1,5 @@
-
+# Simple code to count the number of actions the pilot preformed each section of the expirement and record them
+#in an excel file with 
 from lib2to3.tests.pytree_idempotency import diff
 '''
 Created on Apr 15, 2019
@@ -10,10 +11,7 @@ import math
 import os
 from openpyxl import Workbook
 from openpyxl.xml.constants import MAX_ROW
-    
-
-    
-          
+           
 def filelist(): 
     names = []
     for file in os.listdir(folder):
@@ -21,11 +19,6 @@ def filelist():
         if filename.endswith(('.xlsx')):
             names.append(filename)
     return names
-def minutize(mili):
-    mili = (mili/ 1000)/60  
-    y = math.modf(mili)
-    y = ((y[0] * 60) / 100) + y[1]
-    return y
 def makebook(filenames):
     finalbook = Workbook()
     finalsheet = finalbook.active  
